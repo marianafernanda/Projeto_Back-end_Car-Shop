@@ -16,7 +16,7 @@ export default class CarController {
     this.service = new CarService();
   }
 
-  public async registerCar() {
+  public async register() {
     const car: ICar = {
       model: this.req.body.model,
       year: this.req.body.year,
@@ -28,7 +28,7 @@ export default class CarController {
     };
 
     try {
-      const newCar = await this.service.registerCar(car);
+      const newCar = await this.service.register(car);
       return this.res.status(201).json(newCar);
     } catch (error) {
       this.next(error);

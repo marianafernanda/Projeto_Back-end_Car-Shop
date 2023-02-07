@@ -11,9 +11,9 @@ export default class CarService {
     return null;
   }
 
-  public async registerCar(car: ICar) {
+  public async register(car: ICar) {
     const carODM = new CarODM();
-    const newCar = await carODM.registerCar(car);
+    const newCar = await carODM.register(car);
     return this.createCarDomain(newCar);
   }
 
