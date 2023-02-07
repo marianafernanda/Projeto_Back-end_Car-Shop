@@ -1,9 +1,9 @@
 import { expect } from 'chai';
 import { Model } from 'mongoose';
 import Sinon from 'sinon';
-import Car from '../../../src/Domains/Car';
-import ICar from '../../../src/Interfaces/ICar';
-import CarService from '../../../src/Services/CarService';
+import Car from '../../../../src/Domains/Car';
+import ICar from '../../../../src/Interfaces/ICar';
+import CarService from '../../../../src/Services/CarService';
 
 describe('Registra um carro', function () {
   it('Registra um carro com sucesso', async function () {
@@ -31,7 +31,7 @@ describe('Registra um carro', function () {
     Sinon.stub(Model, 'create').resolves(carOutput);
 
     const service = new CarService();
-    const result = await service.registerCar(carInput);
+    const result = await service.register(carInput);
 
     expect(result).to.be.deep.equal(carOutput);
 

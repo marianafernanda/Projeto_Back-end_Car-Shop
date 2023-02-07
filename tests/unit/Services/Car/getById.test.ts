@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 import { Model } from 'mongoose';
 import Sinon from 'sinon';
-import Car from '../../../src/Domains/Car';
-import CarService from '../../../src/Services/CarService';
+import Car from '../../../../src/Domains/Car';
+import CarService from '../../../../src/Services/CarService';
 
 describe('Lista carro por id', function () {
   it('Lista apenas o carro com o id recebido', async function () {
